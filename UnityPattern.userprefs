@@ -1,21 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Tactic\TacticBook.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Tactic\Template\TacticTemplate.cs">
     <Files>
-      <File FileName="Assets\Tactic\Template\TacticTemplate.cs" Line="34" Column="25" />
-      <File FileName="Assets\Tactic\TacticTimer.cs" Line="24" Column="6" />
+      <File FileName="Assets\Tactic\Trigger\TacticTeleportTrigger.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tactic\Template\TacticTemplate.cs" Line="52" Column="5" />
+      <File FileName="Assets\Tactic\TacticBook.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tactic\TacticTimer.cs" Line="1" Column="1" />
       <File FileName="Assets\DataSource\DataSource.cs" Line="1" Column="1" />
-      <File FileName="Assets\Tactic\TacticInterface.cs" Line="7" Column="33" />
-      <File FileName="Assets\Tactic\TacticDecorator.cs" Line="32" Column="22" />
-      <File FileName="Assets\Tactic\TacticBook.cs" Line="20" Column="1" />
-      <File FileName="Assets\Tactic\TacticPaper.cs" Line="16" Column="1" />
+      <File FileName="Assets\Tactic\TacticInterface.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tactic\TacticDecorator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Tactic\TacticPaper.cs" Line="1" Column="1" />
       <File FileName="Assets\Tactic\Notification\TimeTacticNotification.cs" Line="1" Column="1" />
       <File FileName="Assets\Tactic\Notification\TacticNotification.cs" Line="1" Column="1" />
       <File FileName="Assets\Tactic\Trigger\TacticTeleportTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Tactic\Template\TacticTemplate.cs" Line="40" Column="1" />
-      <File FileName="Assets\Tactic\Template\TacticDataSource.cs" Line="9" Column="1" />
+      <File FileName="Assets\Tactic\Template\TacticDataSource.cs" Line="59" Column="34" />
       <File FileName="Assets\Tactic\Progress\TacticProgressInterface.cs" Line="1" Column="1" />
-      <File FileName="Assets\Tactic\Progress\TimeTacticProgress.cs" Line="28" Column="6" />
+      <File FileName="Assets\Tactic\Progress\TimeTacticProgress.cs" Line="1" Column="1" />
+      <File FileName="Assets\Example\Tactic\TacticMainMenu.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

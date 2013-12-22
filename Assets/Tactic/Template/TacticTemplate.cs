@@ -1,39 +1,56 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 
-public class TacticTemplate : MonoBehaviour
+public enum TacticTemplateFunctionKind {
+    NONE = 0,
+    CONDITION,
+}
+
+
+public class TacticTemplate
 {
     static private bool mIsInitial = false;
-    static private DataSet mSet = new DataSet ();
-    
+    static private DataSet mSet = null;
+
     static public void Initial ()
     {
         if (mIsInitial) {
             return;
         }
+
+        TacticDataSource source = new TacticDataSource ();
+        source.OnFinishLoaded += OnFinishLoaded;
+        source.Load ();
+    }
+
+    static public bool IsReady() {
+        return mSet != null;
+    }
+
+    static public bool IsExistPaper(int paperId) {
+        if (!IsReady()) {
+            return false;
+        }
+
+        DataView v = new DataView(mSet.Tables["Paper"]);
+        v.RowFilter = string.Format("Id = {0}", paperId);
+        return (v.Count != 0);
+    }
+
+    static public DataView Conditions(int paperId) {
+        if (!IsReady()) {
+            return new DataView();
+        }
         
-        DataTable paper = new DataTable ("Paper");
-        paper.Columns.Add (new DataColumn ("Id", typeof(int)));
-        paper.Columns.Add (new DataColumn ("Title", typeof(string)));
+        DataView v = new DataView(mSet.Tables["Function"]);
+        v.RowFilter = string.Format("PaperId = {0} AND Type = {1}", paperId, 1);
 
-        DataRow row = paper.NewRow ();
-        row.ItemArray = new object[] {1, "Example Timer"};
-        paper.Rows.Add (row);
-
-        mSet.Tables.Add (paper);
-    }
-    
-    static public DataTable Paper ()
-    {
-        return mSet.Tables ["Paper"];
+        return v;
     }
 
-//    static string PaperTitle(int paperId) {
-//        if (!mSet.Tables.Contains("Paper")){
-//            return "";
-//        }
-//
-//        return "Example Timer";
-//    }
+    static private void OnFinishLoaded (DataSet set) {
+        mSet = set;
+    }
 }
